@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z</title>
+    <!-- Google Fonts for beautiful typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Caveat:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="sky-background">
+        <div class="moon"></div>
+        <div id="stars-container"></div>
+    </div>
+
+    <!-- Canvas layers for fireworks and heart string art -->
+    <canvas id="fireworksCanvas"></canvas>
+    <canvas id="heartCanvas"></canvas>
+
+    <!-- The cannon at the bottom -->
+    <div id="cannon-container">
+        <div class="cannon">
+            <div class="wheel shadow z-index-0"></div>
+            <div class="barrel-container">
+                <div class="barrel"></div>
+            </div>
+            <div class="base"></div>
+            <div class="wheel z-index-2"></div>
+        </div>
+    </div>
+
+    <!-- UI Overlay for envelopes and letters -->
+    <div id="ui-layer">
+        <div class="envelope-scene hidden" id="scene1">
+            <div class="envelope-icon" onclick="openLetter(1)">
+                <div class="env-body-back"></div>
+                <div class="env-paper-peek"></div>
+                <div class="env-body-front"></div>
+                <div class="env-flap"></div>
+            </div>
+            <div class="letter-paper" id="letter1">
+                <div class="letter-content arabic-text">
+                    <p>كل عام وانت بخير و ايامج سعيدة و ينعاد عليج بالصحة و العافية يارب ان شاء الله اشوفج تخلصين سادس و تداومين بالكلية الي تريديها و تتخرجين و يوم الي ان شاء الله نخطبج و ناخذج النا يارب و ان شاء الله ربي يحفظج و يسلمج و يحميج و يوخر عنج اي مكروه و يخليج النا يارب يا احلى زهورة بالدنيا و يا احلى شي صار بحياتي والله من بداية عمري لحد الان انت احلى و احسن و افضل شي صار بحياتي و مو مبالغة وهذا قليل بحقج الكلام اعرف اني مقصر وياج هل ايام و دتطلعلي امور هواي سواء اهلي و طلعات و مدري شنو و مقصر وياج هواي واني اسف لهذا الشي كلش بس مو بيدي و الله شاهد عليه فد مشتاقلج لدرجة مو طبيعية مشتاق لسوالفنا كعداتنا و كلش مشتاق لهل حلوة الي مينشبع منها و ان شاء الله ما بعمري اشبع منها و اضل احبها و اشتاقلها باللحظة الف مرا و هذا اقل مااكدر اكوله و ان شاء الله هذا اول عيد فطر النه و مو الاخير وراه ان شاء الله اعياد هواي و افراح هواي سوه و يوم الي اعيد وياج احلى عيد بحياتي و اشوفج يمي هذا العيد الحقيقي شوفتج و بس</p>
+                </div>
+                <button class="next-btn" onclick="nextScene(2)">Z</button>
+            </div>
+        </div>
+
+        <div class="envelope-scene hidden" id="scene2">
+            <div class="envelope-icon" onclick="openLetter(2)">
+                <div class="env-body-back"></div>
+                <div class="env-paper-peek"></div>
+                <div class="env-body-front"></div>
+                <div class="env-flap"></div>
+            </div>
+            <div class="letter-paper" id="letter2">
+                <div class="letter-content english-text">
+                    <p>ite eid n the second one w u in it n its the best eid ive ever had cuz of u cuz of ur existence in it n i wanted to tell u i love u in this eid n every eid to come ur my star that makes my world bright again n i love u so much n ppl can have their eid twice a year but mine is everyday cuz everyday w u is an eid n every day w u is happiness n everyday w u is special cuz u r in it so ppl can celebrate twice a year but ill celebrate 365 days every year cuz ur in those days n ill love u every minute of that time n ill love every second of m my life as long as its w u cuz ur my everything my love my cutie pie my lil one my baby my mommy n everything ur my special person ur my safe place n i love u so much</p>
+                </div>
+                <button class="next-btn" onclick="startHeartAnimation()">Z</button>
+            </div>
+        </div>
+
+        <div id="final-scene" class="hidden">
+            <div class="final-envelopes">
+                <div class="small-env" onclick="replayLetter(1)" title="Arabic Letter">
+                    <div class="env-flap-small"></div>
+                    <div class="env-body-small"></div>
+                </div>
+                <div class="small-env" onclick="replayLetter(2)" title="English Letter">
+                    <div class="env-flap-small"></div>
+                    <div class="env-body-small"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Logic -->
+    <script src="script.js"></script>
+</body>
+</html>
